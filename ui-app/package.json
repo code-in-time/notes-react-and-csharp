@@ -7,6 +7,7 @@
     "@types/node": "11.9.4",
     "@types/react": "16.8.3",
     "@types/react-dom": "16.8.1",
+    "axios": "^0.18.0",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
     "react": "^16.8.2",
