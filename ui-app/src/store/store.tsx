@@ -3,5 +3,5 @@
 import ProfileStore from './ProfileStore';
 
 export const Store = {
-    NotesStore: new ProfileStore(),
+    profileStore: new ProfileStore(),
 };

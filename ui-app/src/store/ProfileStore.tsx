@@ -5,11 +5,12 @@ import { iProfile } from '../interfaces/Profile/iProfile';
 
 class ProfileStore {
     // The profile
-    @observable Profile: iProfile = {
+    @observable profile: iProfile = {
         Address: { No: 0, Place: '', Road: '', Street: ''},
         Notes: [],
         Details: { Age: 0, CellNumber: 0, Email: '', Name: ''}
     };
+    @observable counter: number = 0;
 
     // Load profile
     @action.bound

@@ -4,16 +4,18 @@ import { observer, inject } from 'mobx-react'
 
 @inject("Store")
 @observer
-class MainNote extends Component {
+class MainNote extends Component<any> {
   componentDidMount() {
-    console.log(this.props)
+
   }
 
   render() {
-    console.log(this.props)
+
+    console.log('s', this.props.Store.profileStore.profile)
     return (
       <div>
           MainNote
+          {this.props.Store.profileStore.counter}
       </div>
     );
   }
