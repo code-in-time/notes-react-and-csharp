@@ -6,7 +6,7 @@ import { iProfile } from '../interfaces/Profile/iProfile';
 class ProfileStore {
     // The profile
     @observable profile: iProfile = {
-        Address: { No: 0, Place: '', Road: '', Street: ''},
+        Address: { No: 8, Place: 'a', Road: 'z', Street: 'r'},
         Notes: [],
         Details: { Age: 0, CellNumber: 0, Email: '', Name: ''}
     };
