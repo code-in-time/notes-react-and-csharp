@@ -15,4 +15,7 @@ https://www.npmjs.com/package/axios
 - https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-2.2#set-the-allowed-origins
 
 
+## extensions
+- https://marketplace.visualstudio.com/items?itemName=rafaelsalguero.csharp2ts
+
 
