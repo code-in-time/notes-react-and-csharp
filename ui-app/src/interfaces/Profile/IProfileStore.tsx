@@ -1,7 +1,7 @@
-import { iProfile } from '../../interfaces/Profile/iProfile';
+import { IProfile } from './IProfile';
 
 export interface IProfileStore {
-    profile: iProfile,
+    profile: IProfile,
     counter: number,
     loadProfile?: () => void
   }

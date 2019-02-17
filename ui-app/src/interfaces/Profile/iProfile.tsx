@@ -1,10 +1,10 @@
-import { iDetails } from './iDetails';
-import { iAddress } from './iAddress';
-import { iNote } from './iNote';
+import { IDetails } from './IDetails';
+import { IAddress } from './IAddress';
+import { INote } from './INote';
 
-export interface iProfile
+export interface IProfile
 {
-    Details: iDetails;
-    Address: iAddress;
-    Notes: iNote[];
+    Details: IDetails;
+    Address: IAddress;
+    Notes: INote[];
 }

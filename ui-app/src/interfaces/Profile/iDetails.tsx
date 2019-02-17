@@ -1,4 +1,4 @@
-export interface iDetails
+export interface IDetails
 {
     Name: string;
     Email: string;

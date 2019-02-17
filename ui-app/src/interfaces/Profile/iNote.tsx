@@ -1,4 +1,4 @@
-export interface iNote
+export interface INote
 {
     Date: Date | string;
     Subject: string;

@@ -1,4 +1,4 @@
-export interface iAddress
+export interface IAddress
 {
     No: number;
     Road: string;

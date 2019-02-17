@@ -1,11 +1,11 @@
 import { observable, computed, action } from 'mobx'
 import { observer} from 'mobx-react'
 import axios from 'axios'
-import { iProfile } from '../interfaces/Profile/iProfile';
+import { IProfile } from '../interfaces/Profile/IProfile';
 
 class ProfileStore {
     // The profile
-    @observable profile: iProfile = {
+    @observable profile: IProfile = {
         Address: { No: 8, Place: 'a', Road: 'z', Street: 'r'},
         Notes: [],
         Details: { Age: 0, CellNumber: 0, Email: '', Name: ''}
