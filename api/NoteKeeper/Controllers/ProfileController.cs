@@ -32,6 +32,7 @@ namespace NoteKeeper.Controllers
             Note.Subject = "The subject";
             Note.Text = "The note text";
             Note.Private = false;
+            Note.Archived = true;
 
             List<Note> NotesList = new List<Note>();
             NotesList.Add(Note);

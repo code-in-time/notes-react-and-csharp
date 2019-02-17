@@ -20,7 +20,6 @@ class ProfileStore {
         // Make a request for a user with a given ID
         return axios.get(url)
         .then((response) => {
-          debugger;
           console.log(response);
           this.profile = response.data;
         })
