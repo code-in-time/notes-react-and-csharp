@@ -4,7 +4,7 @@ import { INote } from './INote';
 
 export interface IProfile
 {
-    Details: IDetails;
-    Address: IAddress;
-    Notes: INote[];
+    details: IDetails;
+    address: IAddress;
+    notes: INote[];
 }

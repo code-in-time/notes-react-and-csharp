@@ -1,7 +1,7 @@
 export interface IDetails
 {
-    Name: string;
-    Email: string;
-    Age: number;
-    CellNumber: number;
+    name: string;
+    email: string;
+    age: number;
+    cellNumber: number;
 }

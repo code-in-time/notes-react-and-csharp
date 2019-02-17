@@ -6,9 +6,9 @@ import { IProfile } from '../interfaces/Profile/IProfile';
 class ProfileStore {
     // The profile
     @observable profile: IProfile = {
-        Address: { No: 8, Place: 'a', Road: 'z', Street: 'r'},
-        Notes: [],
-        Details: { Age: 0, CellNumber: 0, Email: '', Name: ''}
+        address: { no: 8, place: 'a', road: 'z', street: 'r'},
+        notes: [],
+        details: { age: 0, cellNumber: 0, email: '', name: ''}
     };
     @observable counter: number = 0;
 
@@ -18,11 +18,13 @@ class ProfileStore {
         const url = `${process.env.REACT_APP_API_URL}/api/profile/7`;
         console.log(url);
         // Make a request for a user with a given ID
-        axios.get(url, {headers: {'Content-Type': 'application/json'}})
-        .then(function (response) {
+        return axios.get(url)
+        .then((response) => {
+          debugger;
           console.log(response);
+          this.profile = response.data;
         })
-        .catch(function (error) {
+        .catch((error) => {
           console.log(error);
         });
     }

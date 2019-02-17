@@ -1,8 +1,8 @@
 export interface INote
 {
-    Date: Date | string;
-    Subject: string;
-    Text: string;
-    Private: boolean;
-    Archived: boolean;
+    date: Date | string;
+    subject: string;
+    text: string;
+    private: boolean;
+    archived: boolean;
 }

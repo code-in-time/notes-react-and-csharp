@@ -17,17 +17,17 @@ class MainNote extends Component<props> {
   static defaultProps = {profileStore:{}}
 
   componentDidMount() {
-
+    this.props.profileStore.loadProfile();
   }
 
   render() {
-    const { Address } = this.props.profileStore.profile;
+    const { address } = this.props.profileStore.profile;
 
     // console.log('s', this.props.Store.profileStore.profile.Address.No)
     return (
       <div className={style.makeLookCool}>
         <ul className="list-group">
-          <li className="list-group-item">{Address.No} {Address.Place} {Address.Road} {Address.Street}</li>
+          <li className="list-group-item">{address.no} {address.place} {address.road} {address.street}</li>
         </ul>
 
       </div>
