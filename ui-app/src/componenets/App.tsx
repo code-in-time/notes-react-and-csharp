@@ -4,6 +4,7 @@ import { observable, computed } from 'mobx'
 import { observer, inject, IStoresToProps } from 'mobx-react'
 import style from '../styles/App.module.css';
 import { IProfileStore } from '../interfaces/Profile/IProfileStore';
+import NewNoteForm from './NewNoteForm';
 
 
 interface props {
@@ -20,6 +21,7 @@ class App extends Component<props> {
     return (
       <div className={`container-fluid w-100 h-100 ${style.background}`}>
         <MainNote/>
+        <NewNoteForm />
         {console.log('props', this.props.profileStore.counter)}
       </div>
     );

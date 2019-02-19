@@ -33,7 +33,7 @@ class MainNote extends Component<props> {
           <li className="list-group-item">
             <ul className="list-group">
               {
-                notes.map((v:INote) => <li className="list-group-item">{v.archived} - {v.date} - {v.private} - {v.subject} - {v.text}</li>)
+                notes.map((v:INote) => <li className="list-group-item">{String(v.archived)} - {v.date} - {String(v.private)} - {v.subject} - {v.text}</li>)
               }
             </ul>
           </li>

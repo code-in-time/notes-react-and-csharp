@@ -1,0 +1,8 @@
+.cBorder {
+    border :1px solid red;
+}
+
+.c input {
+    display: inline-block;
+    border: 1px solid Blue
+}
