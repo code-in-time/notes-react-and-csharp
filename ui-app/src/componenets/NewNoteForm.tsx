@@ -5,15 +5,19 @@ import style from '../styles/NewNoteForm.module.css';
 import { IProfileStore } from '../interfaces/Profile/IProfileStore';
 import { INote} from '../interfaces/Profile/INote'
 import { IProfile } from '../interfaces/Profile/IProfile'
+import { IDetails } from '../interfaces/Profile/IDetails';
+import { IAddress } from '../interfaces/Profile/IAddress';
 
 
 interface props {
   profileStore: IProfileStore
 }
 
-interface state {
-    profile: IProfile
+interface state 
+{
+    profile: IProfile;
 }
+
 
 
 @inject("profileStore")
@@ -26,7 +30,7 @@ class NewNoteForm extends Component<props, state> {
   state = {
       profile: {
             details: {
-                name: '',
+                name: 'sasa',
                 email: '',
                 age: 0,
                 cellNumber: 0,
@@ -50,7 +54,9 @@ class NewNoteForm extends Component<props, state> {
     submitForm: any = (e: any) => {
         console.log(e)
         e.preventDefault();
-        console.log(this.state.profile)
+        console.log('this.state.profile.details.name', this.state.profile.details.name)
+        console.log(this.state.profile.notes)
+        console.log(this.state.profile.address)
     }
 
   render() {
@@ -70,7 +76,6 @@ class NewNoteForm extends Component<props, state> {
                             <input type="text" placeholder="email" onChange={(e)=> this.setState({profile:{...this.state.profile, email: e.target.value}}) } />
                             <input type="text" placeholder="age" onChange={(e)=> this.setState({profile:{...this.state.profile, age: e.target.value}}) } />
                             <input type="text" placeholder="cellNumber" onChange={(e)=> this.setState({profile:{...this.state.profile, cellNumber: e.target.value}}) } />
-                            <input type="text" placeholder="details" onChange={(e)=> this.setState({profile:{...this.state.profile, details: e.target.value}}) } />
                         </div>
                     </div>
                     <div className="row">

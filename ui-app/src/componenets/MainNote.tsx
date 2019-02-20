@@ -4,16 +4,22 @@ import { observer, inject, IStoresToProps } from 'mobx-react'
 import style from '../styles/MainNote.module.css'
 import { IProfileStore } from '../interfaces/Profile/IProfileStore';
 import { INote} from '../interfaces/Profile/INote'
+import { IStore } from '../interfaces/store/IStore'
+import { IProfile } from '../interfaces/Profile/IProfile';
 
 
 interface props {
   profileStore: IProfileStore
 }
 
+// interface state {
+
+// }
+
 
 @inject("profileStore")
 @observer
-class MainNote extends Component<props> {
+class MainNote extends Component<props, any > {
 
   static defaultProps = {profileStore:{}}
 
