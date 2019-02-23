@@ -57,6 +57,7 @@ class NewNoteForm extends Component<props, state> {
         e.preventDefault();
         console.log('this.state.profile.details.name', this.state.profile.details.name)
         console.log(this.state.profile.notes)
+        this.props.profileStore.updateProfile(this.state.profile)
     }
 
     setElmState = (p1: 'address' | 'details' | 'notes', p2: string, v1: string) : void=> {

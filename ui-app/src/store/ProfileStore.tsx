@@ -2,8 +2,9 @@ import { observable, computed, action } from 'mobx'
 import { observer} from 'mobx-react'
 import axios from 'axios'
 import { IProfile } from '../interfaces/Profile/IProfile';
+import { IProfileStore } from '../interfaces/Profile/IProfileStore';
 
-class ProfileStore {
+class ProfileStore implements IProfileStore {
     // The profile
     @observable profile: IProfile = {
         address: { no: 8, place: 'a', road: 'z', street: 'r'},
@@ -26,6 +27,12 @@ class ProfileStore {
         .catch((error) => {
           console.log(error);
         });
+    }
+
+    // Update the profile profile
+    @action.bound
+    updateProfile(profileData: IProfile){
+      this.profile = profileData;
     }
 
 

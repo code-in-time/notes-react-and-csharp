@@ -12,6 +12,7 @@ interface props {
   profileStore: IProfileStore
 }
 
+// TODOD set state type
 // interface state {
 
 // }
