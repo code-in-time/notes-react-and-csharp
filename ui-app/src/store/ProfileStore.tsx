@@ -6,10 +6,10 @@ import { IProfileStore } from '../interfaces/Profile/IProfileStore';
 
 class ProfileStore implements IProfileStore {
     // The profile
-    @observable profile: IProfile = {
-        address: { no: 8, place: 'a', road: 'z', street: 'r'},
-        notes: [],
-        details: { age: 0, cellNumber: 0, email: '', name: ''}
+    @observable Profile: IProfile = {
+        Address: { No: 8, Place: 'a', Road: 'z', Street: 'r'},
+        Notes: [],
+        Details: { Age: 0, CellNumber: 0, Email: '', Name: ''}
     };
     @observable counter: number = 0;
 
@@ -22,7 +22,7 @@ class ProfileStore implements IProfileStore {
         return axios.get(url)
         .then((response) => {
           console.log(response);
-          this.profile = response.data;
+          this.Profile = response.data;
         })
         .catch((error) => {
           console.log(error);
@@ -36,10 +36,10 @@ class ProfileStore implements IProfileStore {
       const url = `${process.env.REACT_APP_API_URL}/api/profile`;
       console.log(url);
       // Make a request for a user with a given ID
-      return axios.post(url, {profile: profileData})
+      return axios.post(url, {Profile: profileData})
       .then((response) => {
         console.log(response);
-        this.profile = response.data;
+        this.Profile = response.data;
       })
       .catch((error) => {
         console.log(error);

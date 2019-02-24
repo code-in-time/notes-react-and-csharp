@@ -2,8 +2,8 @@ import { IProfile } from './IProfile';
 
 
 export interface IProfileStore {
-    profile: IProfile,
-    counter: number,
+    Profile: IProfile,
+    // Counter: number,
     loadProfile: () => void,
     updateProfile: (profileData: IProfile) => void,
   }

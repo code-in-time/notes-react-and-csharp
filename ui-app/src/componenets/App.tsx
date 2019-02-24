@@ -8,21 +8,21 @@ import NewNoteForm from './NewNoteForm';
 
 
 interface props {
-  profileStore: IProfileStore
+  ProfileStore: IProfileStore
 }
 
-@inject("profileStore")
+@inject("ProfileStore")
 @observer
 class App extends Component<props> {
 
-  static defaultProps = {profileStore:{}}
+  static defaultProps = {ProfileStore:{}}
 
   render() {
     return (
       <div className={`container-fluid w-100 h-100 ${style.background}`}>
         <MainNote/>
         <NewNoteForm />
-        {console.log('props', this.props.profileStore.counter)}
+        {/* {console.log('props', this.props.ProfileStore.Counter)} */}
       </div>
     );
   }

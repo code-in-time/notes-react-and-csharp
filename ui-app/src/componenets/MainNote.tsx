@@ -9,7 +9,7 @@ import { IProfile } from '../interfaces/Profile/IProfile';
 
 
 interface props {
-  profileStore: IProfileStore
+  ProfileStore: IProfileStore
 }
 
 // TODOD set state type
@@ -18,29 +18,29 @@ interface props {
 // }
 
 
-@inject("profileStore")
+@inject("ProfileStore")
 @observer
 class MainNote extends Component<props, any > {
 
-  static defaultProps = {profileStore:{}}
+  static defaultProps = {ProfileStore:{}}
 
   componentDidMount() {
-    this.props.profileStore.loadProfile();
+    this.props.ProfileStore.loadProfile();
   }
 
   render() {
-    const { address, details, notes } = this.props.profileStore.profile;
+    const { Address, Details, Notes } = this.props.ProfileStore.Profile;
 
-    // console.log('s', this.props.Store.profileStore.profile.Address.No)
+    // console.log('s', this.props.Store.ProfileStore.Profile.Address.No)
     return (
       <div className={style.makeLookCool}>
         <ul className="list-group">
-          <li className="list-group-item">{address.no} {address.place} {address.road} {address.street}</li>
-          <li className="list-group-item">{details.age} {details.cellNumber} {details.email} {details.name}</li>
+          <li className="list-group-item">{Address.No} {Address.Place} {Address.Road} {Address.Road}</li>
+          <li className="list-group-item">{Details.Age} {Details.CellNumber} {Details.Email} {Details.Name}</li>
           <li className="list-group-item">
             <ul className="list-group">
               {
-                notes.map((v:INote) => <li className="list-group-item">{String(v.archived)} - {v.date} - {String(v.private)} - {v.subject} - {v.text}</li>)
+                Notes.map((v:INote) => <li className="list-group-item">{String(v.Archived)} - {v.Date} - {String(v.Private)} - {v.Subject} - {v.Text}</li>)
               }
             </ul>
           </li>

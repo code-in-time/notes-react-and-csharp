@@ -11,43 +11,43 @@ import { cloneDeep } from 'lodash';
 
 
 interface props {
-  profileStore: IProfileStore
+  ProfileStore: IProfileStore
 }
 
 interface state 
 {
-    profile: IProfile;
+    Profile: IProfile;
 }
 
 
 
-@inject("profileStore")
+@inject("ProfileStore")
 @observer
 // TODO make the state
 class NewNoteForm extends Component<props, state> {
     
-  static defaultProps = {profileStore:{}}
+  static defaultProps = {ProfileStore:{}}
 
   state = {
-      profile: {
-            details: {
-                name: 'sasa',
-                email: '',
-                age: 0,
-                cellNumber: 0,
+      Profile: {
+            Details: {
+                Name: 'sasa',
+                Email: '',
+                Age: 0,
+                CellNumber: 0,
             },
-            address: {
-                no: 0,
-                road: '',
-                street: '',
-                place: '',
+            Address: {
+                No: 0,
+                Road: '',
+                Street: '',
+                Place: '',
             },
-            notes: [{
-                date: '',
-                subject: '',
-                text: '',
-                private: true,
-                archived: true,
+            Notes: [{
+                Date: '',
+                Subject: '',
+                Text: '',
+                Private: true,
+                Archived: true,
             }]
           }
       }
@@ -55,16 +55,16 @@ class NewNoteForm extends Component<props, state> {
     submitForm: any = (e: any) => {
         console.log(e)
         e.preventDefault();
-        console.log('this.state.profile.details.name', this.state.profile.details.name)
-        console.log(this.state.profile.notes)
-        this.props.profileStore.updateProfile(this.state.profile)
+        console.log('this.state.profile.details.name', this.state.Profile.Details.Name)
+        console.log(this.state.Profile.Notes)
+        this.props.ProfileStore.updateProfile(this.state.Profile)
     }
 
-    setElmState = (p1: 'address' | 'details' | 'notes', p2: string, v1: string) : void=> {
+    setElmState = (p1: 'Address' | 'Details' | 'Notes', p2: string, v1: string) : void=> {
         const obj: any = cloneDeep(this.state);
-        if (p1 === 'address' || p1 === 'details') {
+        if (p1 === 'Address' || p1 === 'Details') {
             obj.profile[p1][p2] = v1
-        } else if (p1 === 'notes' ) {
+        } else if (p1 === 'Notes' ) {
             obj.profile.notes[0][p2] = v1
         }
 
@@ -76,9 +76,9 @@ class NewNoteForm extends Component<props, state> {
     }
 
   render() {
-    const { address, details, notes } = this.props.profileStore.profile;
+    const { Address, Details, Notes } = this.props.ProfileStore.Profile;
 
-    // console.log('s', this.props.Store.profileStore.profile.Address.No)
+    // console.log('s', this.props.Store.ProfileStore.Profile.Address.No)
     return (
       <div className={`${style.c} ${style.cBorder}`}>
         <form onSubmit={this.submitForm}>
@@ -89,31 +89,31 @@ class NewNoteForm extends Component<props, state> {
                         <div className="col">Details</div>
                         {/* e: React.FormEvent<HTMLInputElement></HTMLInputElement> */}
                         <div className={`col ${style.inputArea}`}>
-                            <input type="text" placeholder="name" onChange={(e) : void => this.setElmState('details' ,'name', e.target.value) } />
-                            <input type="text" placeholder="email" onChange={(e) : void => this.setElmState('details' ,'email', e.target.value) } />
-                            <input type="text" placeholder="age" onChange={(e) : void => this.setElmState('details' ,'age', e.target.value) } />
-                            <input type="text" placeholder="cellNumber" onChange={(e) : void => this.setElmState('details' ,' name', e.target.value) } />
+                            <input type="text" placeholder="name" onChange={(e) : void => this.setElmState('Details' ,'name', e.target.value) } />
+                            <input type="text" placeholder="email" onChange={(e) : void => this.setElmState('Details' ,'email', e.target.value) } />
+                            <input type="text" placeholder="age" onChange={(e) : void => this.setElmState('Details' ,'Age', e.target.value) } />
+                            <input type="text" placeholder="cellNumber" onChange={(e) : void => this.setElmState('Details' ,' Name', e.target.value) } />
                         </div>
                     </div>
                     <div className="row pt-2 pb-2 border-top">
                         <div className="col">address</div>
                         <div className="col">
-                            <input type="text" placeholder="no" onChange={(e) : void => this.setElmState('address' ,'no', e.target.value) } />
-                            <input type="text" placeholder="road" onChange={(e) : void => this.setElmState('address' ,'road', e.target.value) } />
-                            <input type="text" placeholder="street" onChange={(e) : void => this.setElmState('address' ,'street', e.target.value) } />
-                            <input type="text" placeholder="place" onChange={(e) : void => this.setElmState('address' ,'place', e.target.value) } />
-                            <input type="text" placeholder="place" onChange={(e) : void => this.setElmState('address' ,'place', e.target.value) } />
+                            <input type="text" placeholder="no" onChange={(e) : void => this.setElmState('Address' ,'No', e.target.value) } />
+                            <input type="text" placeholder="road" onChange={(e) : void => this.setElmState('Address' ,'Road', e.target.value) } />
+                            <input type="text" placeholder="street" onChange={(e) : void => this.setElmState('Address' ,'Street', e.target.value) } />
+                            <input type="text" placeholder="place" onChange={(e) : void => this.setElmState('Address' ,'Place', e.target.value) } />
+                            <input type="text" placeholder="place" onChange={(e) : void => this.setElmState('Address' ,'Place', e.target.value) } />
                         </div>
                     </div>
                     <div className="row pt-2 border-top">
                         <div className="col">notes</div>
                         <div className="col">
                         {/* // TODO set the notes */}
-                            <input type="text" placeholder="date" onChange={(e) : void => this.setElmState('notes' ,'date', e.target.value) } />
-                            <input type="text" placeholder="subject" onChange={(e) : void => this.setElmState('notes' ,'subject', e.target.value) } />
-                            <input type="text" placeholder="text" onChange={(e) : void => this.setElmState('notes' ,'text', e.target.value) } />
-                            <input type="text" placeholder="private" onChange={(e) : void => this.setElmState('notes' ,'private', e.target.value) } />
-                            <input type="text" placeholder="archived" onChange={(e) : void => this.setElmState('notes' ,'archived', e.target.value) } />
+                            <input type="text" placeholder="date" onChange={(e) : void => this.setElmState('Notes' ,'Date', e.target.value) } />
+                            <input type="text" placeholder="subject" onChange={(e) : void => this.setElmState('Notes' ,'Subject', e.target.value) } />
+                            <input type="text" placeholder="text" onChange={(e) : void => this.setElmState('Notes' ,'Text', e.target.value) } />
+                            <input type="text" placeholder="private" onChange={(e) : void => this.setElmState('Notes' ,'Private', e.target.value) } />
+                            <input type="text" placeholder="archived" onChange={(e) : void => this.setElmState('Notes' ,'Archived', e.target.value) } />
                         </div>
                     </div>
                     <div className="row">

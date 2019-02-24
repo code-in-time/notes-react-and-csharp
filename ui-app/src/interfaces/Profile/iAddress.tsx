@@ -1,7 +1,7 @@
 export interface IAddress
 {
-    no: number;
-    road: string;
-    street: string;
-    place: string;
+    No: number;
+    Road: string;
+    Street: string;
+    Place: string;
 }
