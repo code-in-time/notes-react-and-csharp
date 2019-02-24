@@ -32,7 +32,18 @@ class ProfileStore implements IProfileStore {
     // Update the profile profile
     @action.bound
     updateProfile(profileData: IProfile){
-      this.profile = profileData;
+      // this.profile = profileData;
+      const url = `${process.env.REACT_APP_API_URL}/api/profile`;
+      console.log(url);
+      // Make a request for a user with a given ID
+      return axios.post(url, {profile: profileData})
+      .then((response) => {
+        console.log(response);
+        this.profile = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     }
 
 

@@ -26,12 +26,12 @@ namespace NoteKeeper
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-                //.AddJsonOptions(options =>
-                //{
-                //    options.SerializerSettings.ContractResolver
-                //        = new Newtonsoft.Json.Serialization.DefaultContractResolver();
-                //});
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.ContractResolver
+                        = new Newtonsoft.Json.Serialization.DefaultContractResolver();
+                });
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowSpecificOrigin",

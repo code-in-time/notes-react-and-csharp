@@ -47,5 +47,21 @@ namespace NoteKeeper.Controllers
             return Profile;
            
         }
+
+        // POST api/values
+        [HttpPost]
+        // GET api/Profile/5
+        //[HttpPost("{id}")]
+        //public ActionResult<Profile> Get(int id)
+        //public void Post([FromBody] Profile value)
+        public ActionResult<Profile> Post([FromBody] Profile value)
+        {
+            //why is the data null?
+
+            var s = value;
+            return value;
+        }
+
     }
+
 }
