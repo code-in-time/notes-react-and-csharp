@@ -63,9 +63,9 @@ class NewNoteForm extends Component<props, state> {
     setElmState = (p1: 'Address' | 'Details' | 'Notes', p2: string, v1: string) : void=> {
         const obj: any = cloneDeep(this.state);
         if (p1 === 'Address' || p1 === 'Details') {
-            obj.profile[p1][p2] = v1
+            obj.Profile[p1][p2] = v1
         } else if (p1 === 'Notes' ) {
-            obj.profile.notes[0][p2] = v1
+            obj.Profile.Notes[0][p2] = v1
         }
 
         // console.log (s);
@@ -89,10 +89,10 @@ class NewNoteForm extends Component<props, state> {
                         <div className="col">Details</div>
                         {/* e: React.FormEvent<HTMLInputElement></HTMLInputElement> */}
                         <div className={`col ${style.inputArea}`}>
-                            <input type="text" placeholder="name" onChange={(e) : void => this.setElmState('Details' ,'name', e.target.value) } />
-                            <input type="text" placeholder="email" onChange={(e) : void => this.setElmState('Details' ,'email', e.target.value) } />
+                            <input type="text" placeholder="name" onChange={(e) : void => this.setElmState('Details' ,'Name', e.target.value) } />
+                            <input type="text" placeholder="email" onChange={(e) : void => this.setElmState('Details' ,'Email', e.target.value) } />
                             <input type="text" placeholder="age" onChange={(e) : void => this.setElmState('Details' ,'Age', e.target.value) } />
-                            <input type="text" placeholder="cellNumber" onChange={(e) : void => this.setElmState('Details' ,' Name', e.target.value) } />
+                            <input type="text" placeholder="cellNumber" onChange={(e) : void => this.setElmState('Details' ,' CellNumber', e.target.value) } />
                         </div>
                     </div>
                     <div className="row pt-2 pb-2 border-top">
@@ -101,7 +101,6 @@ class NewNoteForm extends Component<props, state> {
                             <input type="text" placeholder="no" onChange={(e) : void => this.setElmState('Address' ,'No', e.target.value) } />
                             <input type="text" placeholder="road" onChange={(e) : void => this.setElmState('Address' ,'Road', e.target.value) } />
                             <input type="text" placeholder="street" onChange={(e) : void => this.setElmState('Address' ,'Street', e.target.value) } />
-                            <input type="text" placeholder="place" onChange={(e) : void => this.setElmState('Address' ,'Place', e.target.value) } />
                             <input type="text" placeholder="place" onChange={(e) : void => this.setElmState('Address' ,'Place', e.target.value) } />
                         </div>
                     </div>

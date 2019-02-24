@@ -36,7 +36,7 @@ class ProfileStore implements IProfileStore {
       const url = `${process.env.REACT_APP_API_URL}/api/profile`;
       console.log(url);
       // Make a request for a user with a given ID
-      return axios.post(url, {Profile: profileData})
+      return axios.post(url, profileData)
       .then((response) => {
         console.log(response);
         this.Profile = response.data;

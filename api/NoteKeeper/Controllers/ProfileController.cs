@@ -28,7 +28,7 @@ namespace NoteKeeper.Controllers
             Details.Email = "ZZZZZZZ@zzzzzz.com";
 
             Note Note = new Note();
-            Note.Date = DateTime.Now;
+            Note.Date = DateTime.Now.ToLongDateString();
             Note.Subject = "The subject";
             Note.Text = "The note text";
             Note.Private = false;

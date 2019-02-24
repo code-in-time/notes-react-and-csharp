@@ -1,6 +1,6 @@
 export interface INote
 {
-    Date: Date | string;
+    Date: string;
     Subject: string;
     Text: string;
     Private: boolean;

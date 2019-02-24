@@ -7,7 +7,7 @@ namespace NoteKeeper.Models
 {
     public class Note
     {
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public string Subject { get; set; }
         public string Text { get; set; }
         public Boolean Private { get; set; }
