@@ -40,13 +40,6 @@ console.log(car.acceleration);
 class BaseObject {
     protected width: number = 0
     protected length: number = 0
-
-    public calcSize = (): number => {
-        return this.width * this.length;
-    }
-
-
-
 }
 
 class Rectangle extends BaseObject {
@@ -54,6 +47,10 @@ class Rectangle extends BaseObject {
         super()
         this.width = 4
         this.length = 6
+    }
+
+    public calcSize = (): number => {
+        return this.width * this.length;
     }
 }
 // var baseObject = {
@@ -96,7 +93,12 @@ class Person1 {
     }
 
     set firstName(value: string) {
-        this._firstName = value
+        if (value.length > 3) {
+            this._firstName = value;
+        }
+        else {
+            this._firstName = "";
+        }
     }
 }
 
