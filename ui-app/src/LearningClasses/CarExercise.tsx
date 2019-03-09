@@ -1,3 +1,5 @@
+import { inherits } from "util";
+
 // Exercise 1 - How was your TypeScript Class?
 class Car {
     private name: string = ''
@@ -33,7 +35,26 @@ console.log(car.acceleration);
 car.accelerate(10);
 console.log(car.acceleration);
 
-// // Exercise 2 - Two objects, based on each other ...
+// Exercise 2 - Two objects, based on each other ...
+class BaseObject {
+    protected width: number = 0
+    protected length: number = 0
+
+    public calcSize = (): number => {
+         return this.width * this.length;
+    }
+
+
+
+}
+
+class Rectangle extends BaseObject {
+    constructor() {
+        super()
+        this.width = 4
+        this.length = 6
+    }
+}
 // var baseObject = {
 //     width: 0,
 //     length: 0
@@ -44,7 +65,7 @@ console.log(car.acceleration);
 // rectangle.calcSize = function () {
 //     return this.width * this.length;
 // };
-// console.log(rectangle.calcSize());
+console.log(new Rectangle().calcSize());
 
 // // Exercise 3 - Make sure to compile to ES5 (set the target in tsconfig.json)
 // var person = {
