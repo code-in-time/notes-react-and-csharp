@@ -1,4 +1,5 @@
 import { inherits } from "util";
+// import { Person } from "./Person";
 
 // Exercise 1 - How was your TypeScript Class?
 class Car {
@@ -41,7 +42,7 @@ class BaseObject {
     protected length: number = 0
 
     public calcSize = (): number => {
-         return this.width * this.length;
+        return this.width * this.length;
     }
 
 
@@ -86,11 +87,25 @@ console.log(new Rectangle().calcSize());
 //     enumerable: true,
 //     configurable: true
 // });
-// console.log(person.firstName);
-// person.firstName = "Ma";
-// console.log(person.firstName);
-// person.firstName = "Maximilian";
-// console.log(person.firstName);
+
+class Person1 {
+    private _firstName: string = ''
+
+    get firstName() {
+        return this._firstName;
+    }
+
+    set firstName(value: string) {
+        this._firstName = value
+    }
+}
+
+const person: Person1 = new Person1();
+console.log(person.firstName);
+person.firstName = "Ma";
+console.log(person.firstName);
+person.firstName = "Maximilian";
+console.log(person.firstName);
 
 
 export default {};
