@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Person, Boy} from '../LearningClasses/Person'
+import {Person, Boy,Girl} from '../LearningClasses/Person'
+import CarExercise from '../LearningClasses/CarExercise'
 export interface LearnTypeScriptProps {
 
 }
@@ -14,15 +15,11 @@ class LearnTypeScript extends React.Component<LearnTypeScriptProps, LearnTypeScr
   runCode() {
     let s: Person = new Person();
     console.log('s', s)
-
-
-    let d = new Boy()
-
-    d.name = 'ben'
-    d.tel = 88888
-    d.details = 'hjhjkhjkhjkhkh'
-    console.log('d', d)
-    console.log('s', s)
+    let b = new Boy()
+    console.log('b', b)
+    let g = new Girl()
+    console.log('g', g)
+    console.log(CarExercise)
   }
 
 
@@ -30,8 +27,10 @@ class LearnTypeScript extends React.Component<LearnTypeScriptProps, LearnTypeScr
 
 
 
+
+
   render() {
-    {this.runCode()}
+    // {this.runCode()}
     return (<div>test</div>);
   }
 }
