@@ -35,6 +35,42 @@ numberMap.printMap();
 numberMap.printMap();
 
 
+function Makethis<T>(arg: T): void  {
+    console.log(arg)
+}
+
+Makethis<string>('2');
+Makethis<number>(2);
+
+
+
+class Shape {
+    width:number = 100
+    height:number =  4
+    name: string = ''
+}
+
+class Circle extends Shape {
+    circumference: number = 200
+    name: string = 'Circle'
+}
+
+class Square extends Shape {
+    Sides: number = 4
+    name: string = 'Square'
+}
+
+
+
+
+
+
+function logObj<T>(obj: T): void  {
+    console.dir(obj)
+}
+
+logObj<Shape>(new Circle())
+logObj<Shape>(new Square())
 
 
 
@@ -44,9 +80,4 @@ numberMap.printMap();
 
 
 
-
-
-
-
-console.log('s')
 export {}
