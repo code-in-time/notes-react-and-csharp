@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { Person, Boy, Girl } from '../LearningClasses/Person'
 import CarExercise from '../LearningClasses/CarExercise'
 import { To, TV, Radio } from '../LearningClasses/Machines'
-import {} from '../LearnGenerics/index'
+// import {} from '../LearnGenerics/index'
+import {} from '../LearnDecorators/decorat'
+import {} from '../LearnReflect'
+
 export interface LearnTypeScriptProps {
 
 }
