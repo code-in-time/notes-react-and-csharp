@@ -14,6 +14,7 @@ namespace NoteKeeper.Controllers
     public class ProfileController : ControllerBase
     {
         // GET api/Profile/5
+        // http://localhost:5000/api/Profile/5
         [HttpGet("{id}")]
         public ActionResult<Profile> Get(int id)
         {
@@ -54,6 +55,8 @@ namespace NoteKeeper.Controllers
         //[HttpPost("{id}")]
         //public ActionResult<Profile> Get(int id)
         //public void Post([FromBody] Profile value)
+        // public ActionResult<Profile> Post([FromBody] Profile value)
+        // http://localhost:5000/api/Profile
         public ActionResult<Profile> Post([FromBody] Profile value)
         {
             //why is the data null?
