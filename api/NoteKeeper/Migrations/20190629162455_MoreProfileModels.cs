@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NoteKeeper.Migrations
 {
-    public partial class NoteKeeperModelsEmployeeContext : Migration
+    public partial class MoreProfileModels : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -18,7 +18,8 @@ namespace NoteKeeper.Migrations
                     LastName = table.Column<string>(nullable: true),
                     DateOfBirth = table.Column<DateTime>(nullable: false),
                     PhoneNumber = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true)
+                    Email = table.Column<string>(nullable: true),
+                    Gender = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

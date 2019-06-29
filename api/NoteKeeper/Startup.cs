@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NoteKeeper.Models;
+using NoteKeeper.Repository;
 
 namespace NoteKeeper
 {
@@ -27,8 +28,9 @@ namespace NoteKeeper
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<EmployeeContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:EmployeeDB"]));
- 
+            services.AddDbContext<AppContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:EmployeeDB"]));
+            services.AddScoped<IDataRepository<Employee>, EmployeeManager>();
+
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddJsonOptions(options =>
